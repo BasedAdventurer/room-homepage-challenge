@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'League Spartan';
+    src: url('fonts/LeagueSpartan-VariableFont_wght.woff2') format('woff2'),
+         url('fonts/LeagueSpartan-VariableFont_wght.woff') format('woff');
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --clr-neutral-white: hsl(0, 100%, 100%);
+    --clr-neutral-black: hsl(0, 0%, 0%);
+    --clr-grey-500: hsl(0, 0%, 63%);
+    --clr-grey-800: hsl(0, 0%, 27%);
+
+    --font-league-spartan: 'League Spartan', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+*, 
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: var(--font-league-spartan);
+    font-weight: 500;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
+input, textarea, button, select {
+    font: inherit;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+
+    &.focusable:focus,
+    &.focusable:focus-visible {
+        position: absolute;
+        width: auto;
+        height: auto;
+        padding: 1rem 2rem;
+        margin: 1rem;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        background-color: var(--clr-neutral-very-dark-blue);
+        color: var(--clr-primary-white);
+        z-index: 9999;
+        border-radius: 5px;
+    }
+}
+
+*:focus:not(:focus-visible) {
+    outline: none;
+}
