@@ -11,46 +11,78 @@
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
-<body>
-  Home
-  Shop
-  About
-  Contact
+<html>
+  <body>
+    <a href="#main-content" class="sr-only focusable">Skip to main content</a>
+    
+    <div class="overlay" id="overlay"></div>
 
-  Discover innovative ways to decorate
+    <header class="l-header">
+      <button class="c-toggle-button" data-nav-toggler aria-label="Mobile Navigation Toggle" aria-expanded="false">
+        <img src="images/icon-hamburger.svg" alt="hamburger icon" class="c-toggle-button__icon menu-open">
+        <img src="images/icon-close.svg" alt="close icon" class="c-toggle-button__icon menu-close">
+      </button>
 
-  We provide unmatched quality, comfort, and style for property owners across the country. 
-  Our experts combine form and function in bringing your vision to life. Create a room in your 
-  own style with our collection and make your property a reflection of you and what you love.
+      <a href="#" class="c-logo">
+        <img src="images/logo.svg" alt="room logo">
+      </a>
 
-  Shop now
+      <nav class="c-nav" aria-label="Navigation Menu" data-navbar inert>
+        <ul class="c-nav__list">
+          <li class="c-nav__item"><a href="#" class="c-nav__link">home</a></li>
+          <li class="c-nav__item"><a href="#" class="c-nav__link">shop</a></li>
+          <li class="c-nav__item"><a href="#" class="c-nav__link">about</a></li>
+          <li class="c-nav__item"><a href="#" class="c-nav__link">contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  We are available all across the globe
+    <main id="main-content">
+      <section class="c-hero">
+        <div class="c-hero__img-container">
+          <picture>
+            <source media="(min-width: 48em)" srcset="images/desktop-image-hero-1.jpg">
+            <img src="images/mobile-image-hero-1.jpg" alt="Modern white chairs with wooden legs around a dining table with a potted bonsai tree" class="c-hero__img" loading="lazy">
+          </picture>
 
-  With stores all over the world, it's easy for you to find furniture for your home or place of business. 
-  Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
-  store locator. Any questions? Don't hesitate to contact us today.
+          <div class="c-slider-controls">
+            <button class="c-slider-button prev">
+              <img src="images/icon-angle-left.svg" alt="left slider">
+            </button>
+            <button class="c-slider-button next">
+              <img src="images/icon-angle-right.svg" alt="right slider">
+            </button>
+          </div>
+        </div>
 
-  Shop now
+        <div class="c-hero__text-container">
+          <h1 class="c-hero__title">Discover innovative ways to decorate</h1>
+          <p class="c-hero__desc">
+            We provide unmatched quality, comfort, and style for property owners across the country. 
+            Our experts combine form and function in bringing your vision to life. Create a room in your 
+            own style with our collection and make your property a reflection of you and what you love.
+          </p>
 
-  Manufactured with the best materials
+          <button class="c-hero-button">
+            <span>SHOP NOW</span>
+            <img src="images/icon-arrow.svg" alt="arrow icon">
+          </button>
+        </div>
+      </section>
 
-  Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
-  to ensure that every product is made as perfect and as consistent as possible. With three decades of 
-  experience in this industry, we understand what customers want for their home and office.
-
-  Shop now
-
-  About our furniture
-
-  Our multifunctional collection blends design and function to suit your individual taste.
-  Make each room unique, or pick a cohesive theme that best express your interests and what
-  inspires you. Find the furniture pieces you need, from traditional to contemporary styles
-  or anything in between. Product specialists are available to help you create your dream space.
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
-</body>
+      <section class="c-about">
+        <img class="c-about__img" src="images/image-about-dark.jpg" alt="about-dark">
+        <div class="c-about__text-container">
+          <h2 class="c-about__title">ABOUT OUR FURNITURE</h2>
+          <p class="c-about__desc">
+            Our multifunctional collection blends design and function to suit your individual taste.
+            Make each room unique, or pick a cohesive theme that best express your interests and what
+            inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+            or anything in between. Product specialists are available to help you create your dream space.
+          </p>
+        </div>
+        <img class="c-about__img" src="images/image-about-light.jpg" alt="about-dark">
+      </section>
+    </main>
+  </body>
 </html>
