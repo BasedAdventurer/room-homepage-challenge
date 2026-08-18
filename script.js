@@ -39,12 +39,12 @@ $navToggler.addEventListener("click", toggleNavbar);
 $overlay.addEventListener("click", closeNavbar);
 
 window.addEventListener("resize", () => {
-    if (window.innerWidth >= 768 && $navbar.classList.contains("active")) {
+    if (window.innerWidth >= 1040 && $navbar.classList.contains("active")) {
         closeNavbar();
     }
 });
 
-const mediaQuery = window.matchMedia('(min-width: 48em)');
+const mediaQuery = window.matchMedia('(min-width: 65em)');
 
 const handleNavPlacement = (e) => {
     const isDesktop = e.matches || mediaQuery.matches; 
@@ -112,27 +112,36 @@ const slidesData = [
 
 const titleEl = document.querySelector('.c-hero__title');
 const descEl = document.querySelector('.c-hero__desc');
-const pictureSource = document.querySelector('c-hero__img-container source');
+const pictureSource = document.querySelector('.c-hero__img-container source');
 const pictureImg = document.querySelector('.c-hero__img');
+const heroBtn = document.querySelector('.c-hero-button');
 const prevBtn = document.querySelector('.c-slider-button.prev');
 const nextBtn = document.querySelector('.c-slider-button.next');
 
 function updateSlide(index) {
     const data = slidesData[index];
 
-    titleEl.textContent = data.title;
-    descEl.textContent = data.desc;
     pictureImg.alt = data.alt;
 
     pictureImg.style.opacity = '0';
+    titleEl.classList.add('is-hidden');
+    descEl.classList.add('is-hidden');
+    heroBtn.classList.add('is-hidden');
 
     // 2. Wait 400ms for the fade-out to visually finish (matches your CSS transition time)
     setTimeout(() => {
         // Change the sources while the image is hidden
+        titleEl.textContent = data.title;
+        descEl.textContent = data.desc;
+        
         if (pictureSource) {
             pictureSource.srcset = data.desktopImg;
         }
         pictureImg.src = data.mobileImg;
+
+        titleEl.classList.remove('is-hidden');
+        descEl.classList.remove('is-hidden');
+        heroBtn.classList.remove('is-hidden');
 
         // 3. Wait for the new image to fully load, then fade it back in
         pictureImg.onload = () => {
@@ -147,7 +156,7 @@ function updateSlide(index) {
             pictureImg.style.opacity = '1';
             pictureImg.onload = null;
         }
-    }, 200); 
+    }, 400); 
 }
 
 let currentSlide = 0;
